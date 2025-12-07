@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toxic Craft - Lifesteal Network</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- BACKGROUND LAYERS -->
+  <div id="bg-image" class="bg-layer bg-image"></div>
+  <div class="bg-layer bg-gradient"></div>
+  <div class="bg-layer bg-vignette"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="nav-left">
+      <div class="nav-logo-wrap">
+        <div class="nav-logo-glow"></div>
+        <img src="assets/logo.png" alt="Toxic Craft Logo" class="nav-logo" />
+      </div>
+      <div class="nav-text">
+        <div class="nav-title">Toxic Craft</div>
+        <div class="nav-sub">Lifesteal Network</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#status">Status</a>
+      <a href="#players">Players</a>
+      <a href="#features">Features</a>
+      <a href="#staff">Staff</a>
+      <button class="nav-ip" onclick="copyIP()">Copy IP</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-logo-wrap reveal">
+        <div class="hero-logo-glow"></div>
+        <img src="assets/logo.png" alt="Toxic Craft" class="hero-logo" />
+      </div>
+      <div class="hero-text reveal delay-1">
+        <h1 class="hero-title">Toxic Craft</h1>
+        <p class="hero-tagline">A next-level modern Minecraft Lifesteal network.</p>
+      </div>
+      <div class="hero-actions reveal delay-2">
+        <button class="primary-btn" onclick="copyIP()">
+          play.toxicraft.fun:25569
+        </button>
+        <span class="hero-online" id="hero-online">Checking status...</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- TOP GRID: STATUS + PLAYERS -->
+    <section class="grid-2">
+      <!-- SERVER STATUS CARD -->
+      <section id="status" class="card glass reveal">
+        <div class="card-header">
+          <div class="card-title-row">
+            <span class="card-icon">🌐</span>
+            <div>
+              <h2 class="card-title">Server Status</h2>
+              <p class="card-subtitle">Live information from the network</p>
+            </div>
+          </div>
+          <button id="refresh-btn" class="icon-btn" title="Refresh status">
+            ⟳
+          </button>
+        </div>
+
+        <div class="card-body">
+          <div class="status-row">
+            <div class="status-indicator">
+              <span id="online-dot" class="dot"></span>
+              <span id="online-text" class="status-text">Checking...</span>
+            </div>
+            <span id="version-badge" class="pill pill-muted">Version -</span>
+          </div>
+
+          <div class="ip-box">
+            <div class="ip-icon">🧾</div>
+            <div class="ip-info">
+              <span class="ip-label">Server IP</span>
+              <span id="ip-text" class="ip-value">play.toxicraft.fun:25569</span>
+            </div>
+            <button class="icon-btn small" onclick="copyIP()" title="Copy IP">
+              📋
+            </button>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag-pill glow-border">
+              TOXICRAFT • 🔥 #1 NETWORK 🔥
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ONLINE PLAYERS CARD -->
+      <section id="players" class="card glass reveal delay-1">
+        <div class="card-header">
+          <div class="card-title-row">
+            <span class="card-icon">👥</span>
+            <div>
+              <h2 class="card-title">Online Players</h2>
+              <p id="player-count" class="card-subtitle">0 / 0 players</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="players-content" class="players-content">
+            <p class="muted">Loading players...</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- FEATURES CARD -->
+    <section id="features" class="card glass card-full reveal">
+      <div class="card-header">
+        <div class="card-title-row">
+          <span class="card-icon">⚙️</span>
+          <div>
+            <h2 class="card-title">Server Features</h2>
+            <p class="card-subtitle">Why Toxic Craft feels different</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body features-grid">
+        <article class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3 class="feature-title">Lifesteal Done Right</h3>
+          <p class="feature-text">
+            Custom lifesteal system with fine-tuned balance so every heart and every fight matters.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🏰</div>
+          <h3 class="feature-title">Modern Spawn & Builds</h3>
+          <p class="feature-text">
+            High quality builds, clean design and an optimised lobby built for PvP and chill.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">💀</div>
+          <h3 class="feature-title">Active KOTH & Events</h3>
+          <p class="feature-text">
+            Hourly KOTHs, grind events and challenges so there is always something to fight for.
+          </p>
+        </article>
+      </div>
+    </section>
+
+<!-- STAFF CARD -->
+<section id="staff" class="card glass card-full reveal delay-1">
+  <div class="card-header">
+    <div class="card-title-row">
+      <span class="card-icon">👑</span>
+      <div>
+        <h2 class="card-title">Staff Team</h2>
+        <p class="card-subtitle">The pillars behind ToxicCraft</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body staff-grid">
+
+    <!-- OWNER 1 -->
+    <article class="staff-card tilt-hover">
+      <div class="staff-avatar-wrap clean">
+        <img src="assets/owner.png" alt="Owner" class="staff-avatar" />
+      </div>
+
+      <h3 class="staff-name">Karan_JI</h3>
+      <p class="staff-role">Owner • Founder</p>
+      <p class="staff-bio">
+        Builds the ideas, runs the network and keeps the chaos controlled.
+      </p>
+    </article>
+
+    <!-- OWNER 2 -->
+    <article class="staff-card tilt-hover">
+      <div class="staff-avatar-wrap clean">
+        <img src="assets/owner2.png" alt="Owner" class="staff-avatar" />
+      </div>
+
+      <h3 class="staff-name">SecondOwner</h3>
+      <p class="staff-role">Co-Owner • Management</p>
+      <p class="staff-bio">
+        Handles operations and keeps things alive when chaos strikes.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © <span id="year"></span> Toxic Craft • Designed by
+    <a href="https://karanworks.pages.dev/" target="_blank" rel="noopener">
+      Karan_JI
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
